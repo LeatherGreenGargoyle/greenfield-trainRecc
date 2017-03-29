@@ -1,7 +1,7 @@
-greenfield-trainRecc
+TrainRecc
 ---------------------
 
-
+Working Demo: https://trainrecc.herokuapp.com/
 
 **Authors:** Yuriy Lemberg, Andrew Tran, Gabe Mitrakos
 
@@ -13,7 +13,7 @@ Music recommendation app
 
 - Angular 2 (Angular CLI)
 - Express
-- mySql
+- MySql
 - Node
 
 ### How to start the app:
