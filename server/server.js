@@ -3,12 +3,14 @@ var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var flash = require('connect-flash');
 var setupPassport = require('./passportSetup');
+var path = require('path');
 require('../db');
 
 var bodyParser = require('body-parser');
 var router = require('./routes');
 
 var app = express();
+app.use(express.static(path.join(__dirname, '../dist')));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -23,8 +25,9 @@ setupPassport(app);
 app.use('/api', router);
 
 
-var port = 3000;
-app.listen(port, function(){
+
+var port = 80;
+app.listen(process.env.PORT || port, function(){
   console.log('App listening on port', port);
 });
 

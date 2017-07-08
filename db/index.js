@@ -1,6 +1,6 @@
 var Sequelize = require('sequelize');
 
-module.exports.sequelize = new Sequelize('mysql://admin:BBNDHLISQBDHSULK@aws-us-west-2-portal.1.dblayer.com:15686/compose');
+module.exports.sequelize = new Sequelize('postgres://prwtfkqg:rAEfwItXS62Fwe79HPJYTi5NeFkRFR41@stampy.db.elephantsql.com:5432/prwtfkqg')
 
 module.exports.User = this.sequelize.define('users', {
   username: {
