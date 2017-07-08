@@ -52,6 +52,7 @@ var tags = {
       .then(trains => {
         res.send(trains);
     }).catch(err => {
+      console.log('ERROR SEARCHING FOR TAG', err)
       res.status(500).send(err);
     });
   },

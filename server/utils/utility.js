@@ -43,7 +43,7 @@ var getHypemSongPath = track => {
     .then(scObj => {
       return rp.get(JSON.parse(scObj).url)
         .on('error', err => {
-          console.log('err', err);
+          console.log('ERROR GETTING SONG FROM HYPEM', err);
     }).pipe(s3fsImpl.createWriteStream(fileName));
     }).then(res => {
       return pathToMp3;
