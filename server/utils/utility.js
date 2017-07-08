@@ -28,6 +28,7 @@ const headers = { 'Cookie': hypemCookie, 'Host': hypemHost};
 var getTracks = html => {
   let $ = cheerio.load(html);
   let tracks = JSON.parse($('#displayList-data').remove().html()).tracks;
+  console.log('tracks', tracks)
   return tracks.map(track => {
     return {id: track.id, key: track.key, artist: track.artist, song: track.song};
   });
@@ -43,7 +44,7 @@ var getHypemSongPath = track => {
     .then(scObj => {
       return rp.get(JSON.parse(scObj).url)
         .on('error', err => {
-          console.log('ERROR GETTING SONG FROM HYPEM', err);
+          console.log('ERROR GETTING SONG FROM HYPEM');
     }).pipe(s3fsImpl.createWriteStream(fileName));
     }).then(res => {
       return pathToMp3;

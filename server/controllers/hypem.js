@@ -18,7 +18,7 @@ var findHypemSongs = {
     console.log('get obj', { url: hypemSearch + songQuery + '/1/', headers: headers});
     rp.get({ url: hypemSearch + songQuery + '/1/', headers: headers})
       .then(html => {
-        console.log('html', html);
+        // console.log('html', html);
         let tracks = util.getTracks(html);
         res.send(tracks.slice(0, 3));
       }).catch(err => {
